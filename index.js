@@ -1,16 +1,22 @@
 "use strict";
 
-class Dog {
+class Animal {
 
     constructor(name) {
         this.name = name;
-        if (name == undefined) {
-            this.name = "no name";
-        }
+    }
+
+}
+
+class Dog extends Animal {
+
+    constructor(name) {
+        super(name);
+        this.cry = `My name is ${name}!!`;
     }
 
     bark() {
-        console.log(`My name is ${this.name}`)
+        console.log(this.cry);
     }
 
 }
