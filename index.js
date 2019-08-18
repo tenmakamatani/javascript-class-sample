@@ -11,6 +11,8 @@ class Animal {
 class Dog extends Animal {
 
     constructor(name) {
+        // 継承したクラスのコンストラクタでは、super必須
+        // superの前にthisを使ってはいけない
         super(name);
         this.cry = `My name is ${name}!!`;
     }
