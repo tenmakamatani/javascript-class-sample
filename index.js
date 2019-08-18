@@ -24,8 +24,17 @@ class Dog extends Animal {
         console.log(this.cry);
     }
 
-    //静的メソッド、Dog.getInstanceCount()の形で呼び出せる。インスタンスからは呼び出せない
-    //
+    // ゲッターメソッド
+    get getName() {
+        return this.name;
+    }
+
+    // セッターメソッド
+    set setName(name) {
+        this.name = name;
+    }
+
+    // 静的メソッド、Dog.getInstanceCount()の形で呼び出せる。インスタンスからは呼び出せない
     static getInstanceCount() {
         return globalInstanceCount;
     }
@@ -34,4 +43,6 @@ class Dog extends Animal {
 
 const dog = new Dog(process.argv[2]);
 
-console.log(Dog.getInstanceCount());
+dog.setName = "javascript";
+
+console.log(dog.getName);
